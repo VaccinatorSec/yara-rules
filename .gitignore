@@ -112,3 +112,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# extra
+.idea/
+.vscode/
+*.hexproj
+_MALWARE/
