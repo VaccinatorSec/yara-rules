@@ -21,7 +21,11 @@ rule Pkg // https://github.com/vercel/pkg
     
     strings:
         $pkg_prelude_bootstrap = "pkg/prelude/bootstrap.js"
+        $pkg_version_mispatch = "Pkg: VERSION_MISMATCH"
+        $pkg_length_mismatch = "Pkg: LENGTH_MISMATCH"
+        $pkg_checksum_mismatch = "Pkg: CHECKSUM_MISMATCH"
+
 
     condition:
-        any of them
+        all of them
 }
