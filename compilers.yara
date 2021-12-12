@@ -1,12 +1,17 @@
 /*
-Detects compiled js executables.
+Compiler classification YARA rules
+by nwunderly
 */
+
+/**************\
+| JS Compilers |
+\**************/
 
 rule Nexe // https://github.com/nexe/nexe
 {
     meta:
         author = "nwunderly"
-
+    
     strings:
         $nexe_sentinel = "<nexe~~sentinel>"
     
@@ -26,6 +31,25 @@ rule Pkg // https://github.com/vercel/pkg
         $pkg_checksum_mismatch = "Pkg: CHECKSUM_MISMATCH"
 
 
+    condition:
+        all of them
+}
+
+
+/*************\
+| Rust Builds |
+\*************/
+
+rule Rust
+{
+    meta:
+        author = "nwunderly"
+    
+    strings:
+        $rustc = "rustc"
+        $rust_backtrace = "RUST_BACKTRACE"
+        $rust_panic = "rust_panic"
+    
     condition:
         all of them
 }
