@@ -3,11 +3,15 @@ Compiler classification YARA rules
 by nwunderly
 */
 
+// https://github.com/bartblaze/Yara-rules
+include "../bartblaze/rules/generic/PyInstaller.yar"
+
 /**************\
 | JS Compilers |
 \**************/
 
-rule Nexe // https://github.com/nexe/nexe
+// https://github.com/nexe/nexe
+rule Nexe: executable compiler js nexe
 {
     meta:
         author = "nwunderly"
@@ -19,7 +23,8 @@ rule Nexe // https://github.com/nexe/nexe
         $nexe_sentinel at (filesize - 32)
 }
 
-rule Pkg // https://github.com/vercel/pkg
+// https://github.com/vercel/pkg
+rule Pkg: executable compiler js pkg
 {
     meta:
         author = "nwunderly"
@@ -35,12 +40,22 @@ rule Pkg // https://github.com/vercel/pkg
         all of them
 }
 
+/**************\
+| PY Compilers |
+\**************/
+
+// https://github.com/pyinstaller/pyinstaller
+// rule pyinstaller: executable compiler py
+// {
+//     condition:
+//         PyInstaller
+// }
 
 /*************\
 | Rust Builds |
 \*************/
 
-rule Rust
+rule Rust: executable compiler rust
 {
     meta:
         author = "nwunderly"

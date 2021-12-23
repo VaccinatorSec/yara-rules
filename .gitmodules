@@ -1,0 +1,6 @@
+[submodule "bartblaze"]
+	path = bartblaze
+	url = https://github.com/bartblaze/yara-rules
+[submodule "xumeiquer"]
+	path = xumeiquer
+	url = https://github.com/xumeiquer/yara-forensics/
