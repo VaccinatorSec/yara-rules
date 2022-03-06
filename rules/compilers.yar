@@ -23,6 +23,19 @@ rule Nexe: executable compiler js nexe
         e.pdb_path contains ".nexe" and pe.version_info.OriginalFilename == "node.exe" and $nexe_sentinel at (filesize - 32)
 }
 
+// https://github.com/leafac/caxa/
+rule CAXA: executable compiler js caxa
+{
+    meta:
+        author = "codedninja"
+    
+    strings:
+        $caxacaxacaxa = "\nCAXACAXACAXA\n"
+    
+    condition:
+        $caxacaxacaxa
+}
+
 // https://github.com/vercel/pkg
 rule Pkg: executable compiler js pkg
 {
