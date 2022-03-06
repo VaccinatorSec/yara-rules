@@ -23,6 +23,19 @@ rule Nexe: executable compiler js nexe
         $nexe_sentinel at (filesize - 32)
 }
 
+// https://github.com/leafac/caxa/
+rule CAXA: executable compiler js caxa
+{
+    meta:
+        author = "codedninja"
+    
+    strings:
+        $caxacaxacaxa = "CAXACAXACAXA"
+    
+    condition:
+        $caxacaxacaxa
+}
+
 // https://github.com/vercel/pkg
 rule Pkg: executable compiler js pkg
 {
