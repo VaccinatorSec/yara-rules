@@ -30,7 +30,7 @@ rule CAXA: executable compiler js caxa
         author = "codedninja"
     
     strings:
-        $caxacaxacaxa = "CAXACAXACAXA"
+        $caxacaxacaxa = "\nCAXACAXACAXA\n"
     
     condition:
         $caxacaxacaxa
