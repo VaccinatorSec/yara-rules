@@ -27,7 +27,9 @@ rule Nexe: executable compiler js nexe
 rule CAXA: executable compiler js caxa
 {
     meta:
-        author = "codedninja"
+        description = "A way to identify Nodejs executables"
+        author = "Michael Pivonka (codedninja)"
+        date = "03/04/2022"
     
     strings:
         $caxacaxacaxa = "\nCAXACAXACAXA\n"
