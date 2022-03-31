@@ -20,14 +20,16 @@ rule Nexe: executable compiler js nexe
         $nexe_sentinel = "<nexe~~sentinel>"
     
     condition:
-        $nexe_sentinel at (filesize - 32)
+        e.pdb_path contains ".nexe" and pe.version_info.OriginalFilename == "node.exe" and $nexe_sentinel at (filesize - 32)
 }
 
 // https://github.com/leafac/caxa/
 rule CAXA: executable compiler js caxa
 {
     meta:
-        author = "codedninja"
+        description = "A way to identify Nodejs executables"
+        author = "Michael Pivonka (codedninja)"
+        date = "03/04/2022"
     
     strings:
         $caxacaxacaxa = "\nCAXACAXACAXA\n"
@@ -41,16 +43,9 @@ rule Pkg: executable compiler js pkg
 {
     meta:
         author = "nwunderly"
-    
-    strings:
-        $pkg_prelude_bootstrap = "pkg/prelude/bootstrap.js"
-        $pkg_version_mispatch = "Pkg: VERSION_MISMATCH"
-        $pkg_length_mismatch = "Pkg: LENGTH_MISMATCH"
-        $pkg_checksum_mismatch = "Pkg: CHECKSUM_MISMATCH"
-
 
     condition:
-        all of them
+        e.pdb_path contains "pkg-fetch" and pe.version_info.OriginalFilename == "node.exe"
 }
 
 /**************\

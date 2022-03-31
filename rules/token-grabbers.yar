@@ -41,3 +41,18 @@ rule Extrack: executable tokengrabber
     condition:
         all of them
 }
+
+rule TokGrabber: executable tokengrabber
+{
+    meta:
+        description = "Tokgrabber - Check if an executable has tokgrabber only string"
+        author = "Michael Pivonka (codedninja)"
+        date = "02/15/2022"
+     
+    strings:
+        $webhook_regex = /_____________________RTX______________________________(.*?)_____________________STX______________________________/
+ 
+    condition:
+        $webhook_regex
+}
+

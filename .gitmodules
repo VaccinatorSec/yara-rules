@@ -4,3 +4,6 @@
 [submodule "xumeiquer"]
 	path = xumeiquer
 	url = https://github.com/xumeiquer/yara-forensics/
+[submodule "retdec"]
+	path = retdec
+	url = git@github.com:avast/retdec.git
