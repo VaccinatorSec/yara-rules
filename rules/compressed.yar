@@ -1,6 +1,6 @@
 /*
 Compressed file classification YARA rules
-by nwunderly
+by Vaccinator Security (vaccinator.tech)
 */
 
 // https://github.com/Xumeiquer/yara-forensics
@@ -9,6 +9,7 @@ include "../xumeiquer/file/compressed.yar"
 rule zip: compressed zip
 {
     meta:
+        description = "Identify zip files"
         author = "nwunderly"
         
     strings:

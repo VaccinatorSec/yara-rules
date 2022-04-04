@@ -1,6 +1,6 @@
 /*
 Compiler classification YARA rules
-by nwunderly
+by Vaccinator Security (vaccinator.tech)
 */
 
 // https://github.com/bartblaze/Yara-rules
@@ -14,6 +14,7 @@ include "../bartblaze/rules/generic/PyInstaller.yar"
 rule Nexe: executable compiler js nexe
 {
     meta:
+        description = "Identify Nodejs executables built with nexe"
         author = "nwunderly"
     
     strings:
@@ -42,6 +43,7 @@ rule CAXA: executable compiler js caxa
 rule Pkg: executable compiler js pkg
 {
     meta:
+        description = "Identify Nodejs executables built with pkg"
         author = "nwunderly"
 
     condition:
@@ -53,11 +55,6 @@ rule Pkg: executable compiler js pkg
 \**************/
 
 // https://github.com/pyinstaller/pyinstaller
-// rule pyinstaller: executable compiler py
-// {
-//     condition:
-//         PyInstaller
-// }
 
 /*************\
 | Rust Builds |
@@ -66,6 +63,7 @@ rule Pkg: executable compiler js pkg
 rule Rust: executable compiler rust
 {
     meta:
+        description = "Identify Rust executables"
         author = "nwunderly"
     
     strings:

@@ -1,11 +1,12 @@
 /*
 Token grabber YARA rules
-by nwunderly
+by Vaccinator Security (vaccinator.tech)
 */
 
 rule JSTokenGrabber: executable tokengrabber
 {
     meta:
+        description = "Generic JavaScript token grabbers"
         author = "nwunderly"
     
     strings:
@@ -19,6 +20,7 @@ rule JSTokenGrabber: executable tokengrabber
 rule PirateStealer: executable tokengrabber
 {
     meta:
+        description = "PirateStealer token grabber"
         author = "nwunderly"
     
     strings:
@@ -32,6 +34,7 @@ rule PirateStealer: executable tokengrabber
 rule Extrack: executable tokengrabber
 {
     meta:
+        description = "Extrack token grabber"
         author = "nwunderly"
     
     strings:

@@ -1,3 +1,8 @@
+/*
+Installer executable classification YARA rules
+by Vaccinator Security (vaccinator.tech)
+*/
+
 import "pe"
 
 rule nsis: installer nsis {

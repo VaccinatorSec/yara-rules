@@ -1,4 +1,4 @@
-// This just wraps up my other yara files
+// This just wraps up the other yara files
 
 include "./compressed.yar"
 include "./executables.yar"

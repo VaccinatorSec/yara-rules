@@ -1,6 +1,6 @@
 /*
 Executable file classification YARA rules
-by nwunderly
+by Vaccinator Security (vaccinator.tech)
 */
 
 // https://github.com/Xumeiquer/yara-forensics
