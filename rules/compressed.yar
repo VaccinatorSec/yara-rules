@@ -2,6 +2,7 @@
 Compressed file classification YARA rules
 by Vaccinator Security (vaccinator.tech)
 */
+import "magic"
 
 // https://github.com/Xumeiquer/yara-forensics
 
